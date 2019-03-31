@@ -5,6 +5,8 @@ using UnityEngine;
 public class characterController : MonoBehaviour
 {
     Animator m_Animator;
+    bool walking = false;
+    bool running = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,15 +16,14 @@ public class characterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.W)) {
-            m_Animator.SetBool("isWalking", true);
-        } else {
-            m_Animator.SetBool("isWalking", false);
-        }
-        if(Input.GetKey(KeyCode.LeftShift)) {
-            m_Animator.SetBool("isRunning", true);
-        } else {
-            m_Animator.SetBool("isRunning", false);
-        }
+        updateBooleans();
+        m_Animator.SetBool("isWalking", walking);
+        m_Animator.SetBool("isRunning", running);
+    }
+
+    void updateBooleans()
+    {
+            walking = Input.GetKey(KeyCode.W) == true ? true : false;
+            running = Input.GetKey(KeyCode.LeftShift) == true ? true : false;
     }
 }
