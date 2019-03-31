@@ -303,11 +303,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 0b559abf8bea54d4584237131c3bd157, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.2436645
+      value: -3.123
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 0b559abf8bea54d4584237131c3bd157, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.5028176
+      value: 4.214
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 0b559abf8bea54d4584237131c3bd157, type: 3}
       propertyPath: m_LocalRotation.x
@@ -341,6 +341,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 0b559abf8bea54d4584237131c3bd157, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 627083ff89979134095cd77798dffedd, type: 2}
     - target: {fileID: 13700000, guid: 0b559abf8bea54d4584237131c3bd157, type: 3}
       propertyPath: m_UpdateWhenOffscreen
       value: 0
@@ -416,3 +420,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1054836806 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100010, guid: 0b559abf8bea54d4584237131c3bd157,
+    type: 3}
+  m_PrefabInstance: {fileID: 996249620}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1054836809
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054836806}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!54 &1054836810
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054836806}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
+--- !u!114 &1054836811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054836806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c9c2d07185222438e44cc20637a6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
