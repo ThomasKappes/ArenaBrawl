@@ -1,0 +1,183 @@
+fileFormatVersion: 2
+guid: 23f3d4c3d07e9f348bb0f9548e041edd
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Armature
+    100002: ArmLower_L
+    100004: ArmLower_R
+    100006: ArmUpper_L
+    100008: ArmUpper_R
+    100010: Body
+    100012: //RootNode
+    100014: chest
+    100016: FingerLower_L
+    100018: FingerLower_R
+    100020: FingerUpper_L
+    100022: FingerUpper_R
+    100024: Foot_L
+    100026: Foot_R
+    100028: Hair
+    100030: hand_L
+    100032: hand_R
+    100034: head
+    100036: Hipp
+    100038: LegLower_L
+    100040: LegLower_R
+    100042: LegUpper_L
+    100044: LegUpper_R
+    100046: neck
+    100048: pants
+    100050: Shoes
+    100052: shoulder_L
+    100054: shoulder_R
+    100056: spine
+    100058: ThumbUpper_L
+    100060: ThumbUpper_R
+    100062: ThumpLower_L
+    100064: ThumpLower_R
+    100066: top
+    100068: Tose_L
+    100070: Tose_R
+    400000: Armature
+    400002: ArmLower_L
+    400004: ArmLower_R
+    400006: ArmUpper_L
+    400008: ArmUpper_R
+    400010: Body
+    400012: //RootNode
+    400014: chest
+    400016: FingerLower_L
+    400018: FingerLower_R
+    400020: FingerUpper_L
+    400022: FingerUpper_R
+    400024: Foot_L
+    400026: Foot_R
+    400028: Hair
+    400030: hand_L
+    400032: hand_R
+    400034: head
+    400036: Hipp
+    400038: LegLower_L
+    400040: LegLower_R
+    400042: LegUpper_L
+    400044: LegUpper_R
+    400046: neck
+    400048: pants
+    400050: Shoes
+    400052: shoulder_L
+    400054: shoulder_R
+    400056: spine
+    400058: ThumbUpper_L
+    400060: ThumbUpper_R
+    400062: ThumpLower_L
+    400064: ThumpLower_R
+    400066: top
+    400068: Tose_L
+    400070: Tose_R
+    2100000: Haare
+    2100002: She
+    2100004: Material_002
+    2100006: Material_001
+    2100008: Skin
+    4300000: Hair
+    4300002: Shoes
+    4300004: top
+    4300006: pants
+    4300008: Body
+    7400000: Default Take
+    7400002: idle_001
+    7400004: run
+    7400006: walk
+    9500000: //RootNode
+    13700000: Body
+    13700002: Hair
+    13700004: pants
+    13700006: Shoes
+    13700008: top
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
