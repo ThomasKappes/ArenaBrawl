@@ -467,5 +467,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c9c2d07185222438e44cc20637a6d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 2
+  walkspeed: 1
+  runspeed: 3
   cam: {fileID: 292360079}

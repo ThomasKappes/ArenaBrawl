@@ -8,7 +8,8 @@ public class characterController : MonoBehaviour
     Animator m_Animator;
     bool walking = false;
     bool running = false;
-    public float turnSpeed;
+    public float walkspeed;
+    public float runspeed;
     public Camera cam;
     
     // Start is called before the first frame update
@@ -30,13 +31,25 @@ public class characterController : MonoBehaviour
         float toRotate = (90 - degree);
 
         transform.rotation = Quaternion.AngleAxis((mousePosition.x-screenPos.x) >= 0 ? toRotate : 180 + toRotate, Vector3.up);
-
-
+        
+        if (isWalking() && isRunning()) {
+            transform.Translate(Vector3.forward * runspeed * Time.deltaTime);
+        } else if (isWalking()) {
+            transform.Translate(Vector3.forward * walkspeed * Time.deltaTime);
+        }
     }
 
     void updateBooleans()
     {
             walking = Input.GetKey(KeyCode.W) == true ? true : false;
             running = Input.GetKey(KeyCode.LeftShift) == true ? true : false;
+    }
+
+    bool isWalking(){
+        return walking;
+    }
+
+    bool isRunning(){
+        return running;
     }
 }
