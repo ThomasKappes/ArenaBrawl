@@ -26,17 +26,32 @@ public class characterController : MonoBehaviour
         m_Animator.SetBool("isRunning", running);
         Vector3 mousePosition = Input.mousePosition;
         Vector3 screenPos = cam.WorldToScreenPoint(transform.position);
-        float bog = (float) Math.Atan((mousePosition.y-screenPos.y)/(mousePosition.x-screenPos.x));
+        float mouseX = mousePosition.x;
+        float mouseY = mousePosition.y;
+        float screenX = screenPos.x;
+        float screenY = screenPos.y;
+        float distX = mouseX - screenX;
+        float distY = mouseY - screenY;
+
+        float bog = (float) Math.Atan((mouseY-screenY)/(mouseX-screenX));
         float degree = ((bog * 180) / (float) Math.PI);
         float toRotate = (90 - degree);
 
-        transform.rotation = Quaternion.AngleAxis((mousePosition.x-screenPos.x) >= 0 ? toRotate : 180 + toRotate, Vector3.up);
+        transform.rotation = Quaternion.AngleAxis((mouseX-screenX) >= 0 ? toRotate : 180 + toRotate, Vector3.up);
         
-        if (isWalking() && isRunning()) {
+        if (Math.Abs(mousePosition.x - screenPos.x) <= 10 && Math.Abs(mousePosition.y - screenPos.y) <= 10)
+        {
+            return;
+        }
+
+        if (isWalking() && isRunning())
+        {
             transform.Translate(Vector3.forward * runspeed * Time.deltaTime);
         } else if (isWalking()) {
             transform.Translate(Vector3.forward * walkspeed * Time.deltaTime);
         }
+
+        
     }
 
     void updateBooleans()
