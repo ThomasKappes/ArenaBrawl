@@ -46,12 +46,23 @@ public class characterController : MonoBehaviour
 
         if (isWalking() && isRunning())
         {
+            fixCam(runspeed, screenX);
             transform.Translate(Vector3.forward * runspeed * Time.deltaTime);
         } else if (isWalking()) {
             transform.Translate(Vector3.forward * walkspeed * Time.deltaTime);
+            fixCam(walkspeed, screenX);
         }
 
         
+    }
+
+    void fixCam(float speed, float screenX)
+    {
+        if(Math.Abs(screenX - (Screen.width/2) ) < 400)
+        {
+            return;
+        }
+        cam.transform.Translate(Vector3.right * (speed + 2) * Time.deltaTime * Math.Sign(screenX - (Screen.width/2)));
     }
 
     void updateBooleans()
