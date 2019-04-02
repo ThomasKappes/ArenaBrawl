@@ -16,7 +16,7 @@ public class CameraScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         Vector3 screenPos = cam.WorldToScreenPoint(player.transform.position);
         fixCam(controller.runspeed, screenPos.x);
@@ -28,6 +28,6 @@ public class CameraScript : MonoBehaviour
         {
             return;
         }
-        transform.Translate(Vector3.right * (speed + 2) * Time.deltaTime * Math.Sign(screenX - (Screen.width/2)));
+        transform.Translate(Vector3.right * (speed ) * Time.deltaTime * Math.Sign(screenX - (Screen.width/2)));
     }
 }

@@ -26,6 +26,7 @@ public class characterController : MonoBehaviour
         m_Animator.SetBool("isRunning", running);
         Vector3 mousePosition = Input.mousePosition;
         Vector3 screenPos = cam.WorldToScreenPoint(transform.position);
+        Vector3 oldworldpos = transform.position;
         float mouseX = mousePosition.x;
         float mouseY = mousePosition.y;
         float screenX = screenPos.x;
@@ -46,23 +47,25 @@ public class characterController : MonoBehaviour
 
         if (isWalking() && isRunning())
         {
-            fixCam(runspeed, screenX);
             transform.Translate(Vector3.forward * runspeed * Time.deltaTime);
+            //fixCam(runspeed, screenX, cam.WorldToScreenPoint(transform.position).x);
         } else if (isWalking()) {
             transform.Translate(Vector3.forward * walkspeed * Time.deltaTime);
-            fixCam(walkspeed, screenX);
+            //fixCam(walkspeed, screenX, cam.WorldToScreenPoint(transform.position).x);
         }
+        fixCam(transform.position - oldworldpos);
 
         
     }
 
-    void fixCam(float speed, float screenX)
+    void fixCam(Vector3 moveVec)
     {
-        if(Math.Abs(screenX - (Screen.width/2) ) < 400)
-        {
-            return;
-        }
-        cam.transform.Translate(Vector3.right * (speed + 2) * Time.deltaTime * Math.Sign(screenX - (Screen.width/2)));
+        //if(Math.Abs(newScreenX - (Screen.width/2) ) < 400)
+       // {
+       //     return;
+       // }
+       // cam.transform.Translate(Vector3.right * Math.Abs(newScreenX - oldScreenX) * Time.deltaTime * Math.Sign(newScreenX - (Screen.width/2)));
+        cam.transform.Translate((new Vector3(moveVec.x, 0, 0)));
     }
 
     void updateBooleans()
