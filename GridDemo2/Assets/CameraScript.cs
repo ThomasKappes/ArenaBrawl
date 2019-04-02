@@ -7,17 +7,19 @@ public class CameraScript : MonoBehaviour
 {
     public GameObject player;
     Camera cam;
+    characterController controller;
     // Start is called before the first frame update
     void Start()
     {
         cam = gameObject.GetComponent(typeof(Camera)) as Camera;
+        controller = (characterController) player.GetComponent(typeof(characterController));
     }
 
     // Update is called once per frame
     void Update()
     {
         Vector3 screenPos = cam.WorldToScreenPoint(player.transform.position);
-        fixCam(characterController.runspeed, screenPos.x);
+        fixCam(controller.runspeed, screenPos.x);
     }
 
     void fixCam(float speed, float screenX)
