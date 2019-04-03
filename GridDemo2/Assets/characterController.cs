@@ -53,19 +53,27 @@ public class characterController : MonoBehaviour
             transform.Translate(Vector3.forward * walkspeed * Time.deltaTime);
             //fixCam(walkspeed, screenX, cam.WorldToScreenPoint(transform.position).x);
         }
-        fixCam(transform.position - oldworldpos);
+        Vector3 camRelocatorVec = transform.position - oldworldpos;
+        screenPos = cam.WorldToScreenPoint(transform.position);
+        screenX = screenPos.x;
+        screenY = screenPos.y;
+        if(screenX > 400 && screenX < (Screen.width - 400))
+        {
+            camRelocatorVec =  new Vector3 (0,0,camRelocatorVec.z);
+        }
+        if(screenY > 150 && screenY < (Screen.height - 500))
+        {
+            camRelocatorVec = new Vector3 (camRelocatorVec.x,0,0);
+        }
+        fixCam(camRelocatorVec);
+        
 
         
     }
 
     void fixCam(Vector3 moveVec)
     {
-        //if(Math.Abs(newScreenX - (Screen.width/2) ) < 400)
-       // {
-       //     return;
-       // }
-       // cam.transform.Translate(Vector3.right * Math.Abs(newScreenX - oldScreenX) * Time.deltaTime * Math.Sign(newScreenX - (Screen.width/2)));
-        cam.transform.Translate((new Vector3(moveVec.x, 0, 0)));
+        cam.transform.Translate((new Vector3(moveVec.x, 0, moveVec.z)), Space.World);
     }
 
     void updateBooleans()
