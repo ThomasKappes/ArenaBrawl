@@ -21,7 +21,7 @@ public class characterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        updateBooleans();
+        Vector3 moveVector = updateBooleans();
         m_Animator.SetBool("isWalking", walking);
         m_Animator.SetBool("isRunning", running);
         Vector3 mousePosition = Input.mousePosition;
@@ -47,11 +47,9 @@ public class characterController : MonoBehaviour
 
         if (isWalking() && isRunning())
         {
-            transform.Translate(Vector3.forward * runspeed * Time.deltaTime);
-            //fixCam(runspeed, screenX, cam.WorldToScreenPoint(transform.position).x);
+            transform.Translate(moveVector * runspeed * Time.deltaTime);
         } else if (isWalking()) {
-            transform.Translate(Vector3.forward * walkspeed * Time.deltaTime);
-            //fixCam(walkspeed, screenX, cam.WorldToScreenPoint(transform.position).x);
+            transform.Translate(moveVector * walkspeed * Time.deltaTime);
         }
         Vector3 camRelocatorVec = transform.position - oldworldpos;
         screenPos = cam.WorldToScreenPoint(transform.position);
@@ -76,10 +74,38 @@ public class characterController : MonoBehaviour
         cam.transform.Translate((new Vector3(moveVec.x, 0, moveVec.z)), Space.World);
     }
 
-    void updateBooleans()
+    Vector3 updateBooleans()
     {
-            walking = Input.GetKey(KeyCode.W) == true ? true : false;
-            running = Input.GetKey(KeyCode.LeftShift) == true ? true : false;
+        walking = false;
+        running = false;
+        Vector3 moveVec = new Vector3(0, 0, 0);
+        
+        if (Input.GetKey(KeyCode.W))
+        {
+            moveVec = moveVec + Vector3.forward;
+            walking = true;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            moveVec = moveVec + Vector3.left;
+            walking = true;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            moveVec = moveVec + Vector3.back;
+            walking = true;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            moveVec = moveVec + Vector3.right;
+            walking = true;
+        }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            running = true;
+        }
+        return moveVec;
+         
     }
 
     bool isWalking(){
