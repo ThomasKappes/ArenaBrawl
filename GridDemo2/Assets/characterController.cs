@@ -10,6 +10,7 @@ public class characterController : MonoBehaviour
     bool running = false;
     public float walkspeed;
     public float runspeed;
+    public float turnspeed;
     public Camera cam;
     
     // Start is called before the first frame update
@@ -34,7 +35,7 @@ public class characterController : MonoBehaviour
         float distX = mouseX - screenX;
         float distY = mouseY - screenY;
 
-        float bog = (float) Math.Atan((mouseY-screenY)/(mouseX-screenX));
+        /*float bog = (float) Math.Atan((mouseY-screenY)/(mouseX-screenX));
         float degree = ((bog * 180) / (float) Math.PI);
         float toRotate = (90 - degree);
 
@@ -43,7 +44,8 @@ public class characterController : MonoBehaviour
         if (Math.Abs(mousePosition.x - screenPos.x) <= 10 && Math.Abs(mousePosition.y - screenPos.y) <= 10)
         {
             return;
-        }
+        }*/
+        transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0) * Time.deltaTime * turnspeed);
 
         if (isWalking() && isRunning())
         {
