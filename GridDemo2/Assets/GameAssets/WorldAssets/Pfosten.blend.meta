@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0863cb3bc891755489228c5316b423bc
+guid: be2ea68b8f67e6f4283b8268e2b39840
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -55,7 +55,6 @@ ModelImporter:
     4300016: Cylinder
     7400000: Default Take
     9500000: //RootNode
-    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
