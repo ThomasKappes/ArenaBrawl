@@ -26,8 +26,8 @@ public class characterController : MonoBehaviour
     void Update()
     {
         Vector3 moveVector = updateBooleans();
-        m_Animator.SetBool("isWalking", walking);
-        m_Animator.SetBool("isRunning", running);
+        m_Animator.SetBool("walking", walking);
+        m_Animator.SetBool("running", running);
         Vector3 mousePosition = Input.mousePosition;
         Vector3 screenPos = cam.WorldToScreenPoint(transform.position);
         Vector3 oldworldpos = transform.position;
