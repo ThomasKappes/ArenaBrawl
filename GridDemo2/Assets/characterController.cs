@@ -8,6 +8,10 @@ public class characterController : MonoBehaviour
     Animator m_Animator;
     bool walking = false;
     bool running = false;
+    bool walkLeft = false;
+    bool walkRight = false;
+    bool walkBack = false;
+    bool jump = false;
     public float walkspeed;
     public float runspeed;
     public float turnspeed;
@@ -28,6 +32,10 @@ public class characterController : MonoBehaviour
         Vector3 moveVector = updateBooleans();
         m_Animator.SetBool("walking", walking);
         m_Animator.SetBool("running", running);
+        m_Animator.SetBool("walkLeft", walkLeft);
+        m_Animator.SetBool("walkRight", walkRight);
+         m_Animator.SetBool("walkBack", walkBack);
+        m_Animator.SetBool("jump", jump);
         Vector3 mousePosition = Input.mousePosition;
         Vector3 screenPos = cam.WorldToScreenPoint(transform.position);
         Vector3 oldworldpos = transform.position;
@@ -83,6 +91,10 @@ public class characterController : MonoBehaviour
     {
         walking = false;
         running = false;
+        walkLeft = false;
+        walkRight = false;
+        walkBack = false;
+        jump = false;
         Vector3 moveVec = new Vector3(0, 0, 0);
         
         if (Input.GetKey(KeyCode.W))
@@ -94,16 +106,19 @@ public class characterController : MonoBehaviour
         {
             moveVec = moveVec + Vector3.left;
             walking = true;
+            walkLeft = true;
         }
         if (Input.GetKey(KeyCode.S))
         {
             moveVec = moveVec + Vector3.back;
             walking = true;
+            walkBack = true;
         }
         if (Input.GetKey(KeyCode.D))
         {
             moveVec = moveVec + Vector3.right;
             walking = true;
+            walkRight = true;
         }
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -112,6 +127,7 @@ public class characterController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
            rb.AddForce(0, jumpforce, 0, ForceMode.Impulse);
+           jump = true;
         }
         return moveVec;
          
