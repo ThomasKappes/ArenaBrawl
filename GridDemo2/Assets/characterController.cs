@@ -11,12 +11,15 @@ public class characterController : MonoBehaviour
     public float walkspeed;
     public float runspeed;
     public float turnspeed;
+    public float jumpforce;
     public Camera cam;
+    Rigidbody rb;
     
     // Start is called before the first frame update
     void Start()
     {
         m_Animator = gameObject.GetComponent<Animator>();
+        rb = gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -65,7 +68,7 @@ public class characterController : MonoBehaviour
         {
             camRelocatorVec = new Vector3 (camRelocatorVec.x,0,0);
         }
-        fixCam(camRelocatorVec);
+        //fixCam(camRelocatorVec);
         
 
         
@@ -105,6 +108,10 @@ public class characterController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             running = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+           rb.AddForce(0, jumpforce, 0, ForceMode.Impulse);
         }
         return moveVec;
          
