@@ -611,10 +611,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 114fb06d-e701-4266-a9f0-9a730f662968
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: GridDemo2 (1)
+  organizationId: unity_z1nb4gi6t_llja
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

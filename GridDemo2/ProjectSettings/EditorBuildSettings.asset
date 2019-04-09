@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/2_Start/StartBildschrim.unity
+    guid: aa9f2f39a4865074fbffd0e3d2c5ac72
+  - enabled: 1
+    path: Assets/Scenes/3_MainMenu/MainMenu.unity
     guid: 713fd500438274c40b6d545fa4a718e3
   - enabled: 1
+    path: Assets/Scenes/MultiplayerPlayground.unity
+    guid: 72c55277af66ac648a1329c04e74cf67
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 1aea8b595aef4184fb03cab839ed2264
   m_configObjects: {}
